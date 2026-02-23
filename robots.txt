@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://noxsener.github.io/funnyday_website/sitemap.xml
