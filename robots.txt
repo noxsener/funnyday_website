@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://noxsener.github.io/funnyday_website/sitemap.xml
+Sitemap: https://funnyday.com.tr/sitemap.xml
