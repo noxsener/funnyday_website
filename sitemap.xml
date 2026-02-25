@@ -6,14 +6,20 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://funnyday.com.tr/posts/funnyday-citys-alisveris-merkez.html</loc>
-    <lastmod>2026-02-26T00:07:38.705110</lastmod>
+    <loc>https://funnyday.com.tr/posts/funnyday-lovelet-avm.html</loc>
+    <lastmod>2026-02-26T00:33:01.393604</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://funnyday.com.tr/posts/funnyday-citys-alisveris-merkezi.html</loc>
+    <lastmod>2026-02-26T00:32:34.459421</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://funnyday.com.tr/posts/iletisim.html</loc>
-    <lastmod>2026-02-24T01:28:32.703411</lastmod>
+    <lastmod>2026-02-26T00:33:28.520840</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
