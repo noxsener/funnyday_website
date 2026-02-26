@@ -6,26 +6,44 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://funnyday.com.tr/posts/funnyday---kipa-alisveris-merkezi.html</loc>
+    <lastmod>2026-02-26T23:02:11.558378</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://funnyday.com.tr/posts/funnyday----kesan-migros.html</loc>
+    <lastmod>2026-02-26T22:57:22.893993</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://funnyday.com.tr/posts/funnyday---ninova-alisveris-merkezi.html</loc>
+    <lastmod>2026-02-26T22:53:25.130069</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://funnyday.com.tr/posts/novada-avm-funnyday.html</loc>
-    <lastmod>2026-02-26T17:36:01.408494</lastmod>
+    <lastmod>2026-02-26T22:50:34.732777</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://funnyday.com.tr/posts/fotogaleri.html</loc>
-    <lastmod>2026-02-26T22:22:35.988652</lastmod>
+    <lastmod>2026-02-26T23:15:14.226965</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://funnyday.com.tr/posts/funnyday-lovelet-avm.html</loc>
-    <lastmod>2026-02-26T00:33:01.393604</lastmod>
+    <lastmod>2026-02-26T22:47:59.793259</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://funnyday.com.tr/posts/funnyday-citys-alisveris-merkezi.html</loc>
-    <lastmod>2026-02-26T00:32:34.459421</lastmod>
+    <lastmod>2026-02-26T22:48:27.299087</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -48,11 +66,6 @@
   </url>
   <url>
     <loc>https://funnyday.com.tr/categories/etkinlikler.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://funnyday.com.tr/categories/fotograf-galerisi.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
