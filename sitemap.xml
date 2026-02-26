@@ -6,6 +6,12 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://funnyday.com.tr/posts/fotogaleri.html</loc>
+    <lastmod>2026-02-26T13:37:10.764522</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://funnyday.com.tr/posts/funnyday-lovelet-avm.html</loc>
     <lastmod>2026-02-26T00:33:01.393604</lastmod>
     <changefreq>monthly</changefreq>
