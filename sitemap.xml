@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://funnyday.com.tr/</loc>
-    <lastmod>2026-03-01T22:08:15.97593292+03:00</lastmod>
+    <lastmod>2026-03-01T22:21:32.01944188+03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -59,12 +59,6 @@
     <lastmod>2026-02-27T00:11:36.483527+03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://funnyday.com.tr/categories/eglence-merkezlerimiz.html</loc>
-    <lastmod>2026-02-24T00:59:51.794551+03:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://funnyday.com.tr/categories/etkinlikler.html</loc>
