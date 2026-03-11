@@ -1,64 +1,87 @@
-/*
-	Dopetrope by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
+/**
+ * Funnyday — main.js
+ * Pure vanilla JS. No jQuery, no dropotron, no breakpoints lib.
+ * Mobile nav + dropdown touch support only.
+ */
+(function () {
+    'use strict';
 
-(function($) {
+    /* ── Remove preload class after first paint ─────────────── */
+    window.addEventListener('load', function () {
+        setTimeout(function () {
+            document.body.classList.remove('is-preload');
+        }, 80);
+    });
 
-	var	$window = $(window),
-		$body = $('body');
+    /* ── Mobile nav ──────────────────────────────────────────── */
+    var toggle   = document.getElementById('navToggle');
+    var panel    = document.getElementById('navPanel');
+    var overlay  = document.getElementById('navOverlay');
+    var closeBtn = document.querySelector('.nav-panel-close');
 
-	// Breakpoints.
-		breakpoints({
-			xlarge:  [ '1281px',  '1680px' ],
-			large:   [ '981px',   '1280px' ],
-			medium:  [ '737px',   '980px'  ],
-			small:   [ null,      '736px'  ]
-		});
+    function openNav() {
+        if (!panel || !overlay) return;
+        panel.classList.add('open');
+        overlay.classList.add('open');
+        document.body.style.overflow = 'hidden';
+    }
 
-	// Play initial animations on page load.
-		$window.on('load', function() {
-			window.setTimeout(function() {
-				$body.removeClass('is-preload');
-			}, 100);
-		});
+    function closeNav() {
+        if (!panel || !overlay) return;
+        panel.classList.remove('open');
+        overlay.classList.remove('open');
+        document.body.style.overflow = '';
+    }
 
-	// Dropdowns.
-		$('#nav > ul').dropotron({
-			mode: 'fade',
-			noOpenerFade: true,
-			alignment: 'center'
-		});
+    if (toggle)   toggle.addEventListener('click', openNav);
+    if (closeBtn) closeBtn.addEventListener('click', closeNav);
+    if (overlay)  overlay.addEventListener('click', closeNav);
 
-	// Nav.
+    /* Close on Escape */
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closeNav();
+    });
 
-		// Title Bar.
-			$(
-				'<div id="titleBar">' +
-					'<a href="#navPanel" class="toggle"></a>' +
-				'</div>'
-			)
-				.appendTo($body);
+    /* ── Desktop dropdown — touch device fallback ───────────── */
+    /* On touch screens hover doesn't fire; use click-toggle     */
+    var hasTouch = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
 
-		// Panel.
-			$(
-				'<div id="navPanel">' +
-					'<nav>' +
-						$('#nav').navList() +
-					'</nav>' +
-				'</div>'
-			)
-				.appendTo($body)
-				.panel({
-					delay: 500,
-					hideOnClick: true,
-					hideOnSwipe: true,
-					resetScroll: true,
-					resetForms: true,
-					side: 'left',
-					target: $body,
-					visibleClass: 'navPanel-visible'
-				});
+    if (hasTouch) {
+        document.querySelectorAll('nav#nav li').forEach(function (li) {
+            if (!li.querySelector('ul')) return;
 
-})(jQuery);
+            li.querySelector('a').addEventListener('click', function (e) {
+                var isOpen = li.classList.contains('open');
+
+                /* Close all others */
+                document.querySelectorAll('nav#nav li.open').forEach(function (other) {
+                    if (other !== li) other.classList.remove('open');
+                });
+
+                if (!isOpen) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    li.classList.add('open');
+                }
+            });
+        });
+
+        document.addEventListener('click', function () {
+            document.querySelectorAll('nav#nav li.open').forEach(function (li) {
+                li.classList.remove('open');
+            });
+        });
+    }
+
+    /* ── Smooth scroll for in-page anchors ──────────────────── */
+    document.querySelectorAll('a[href^="#"]:not([href="#"])').forEach(function (a) {
+        a.addEventListener('click', function (e) {
+            var target = document.querySelector(a.getAttribute('href'));
+            if (target) {
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+
+})();

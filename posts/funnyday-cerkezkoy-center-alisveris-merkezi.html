@@ -23,34 +23,43 @@
     <meta name="twitter:image" content="https://funnyday.com.tr/images/032026/20260305_ac351643.jpg"/>
     <meta name="twitter:site" content="@"/>
     <script type="application/ld+json">{"@graph":[{"itemListElement":[{"position":1,"name":"Home","item":{"@id":"https://funnyday.com.tr/"},"@type":"ListItem"},{"position":2,"name":"Haberler","item":{"@id":"https://funnyday.com.tr/categories/haberler.html"},"@type":"ListItem"},{"position":3,"name":"FunnyDay - Çerkezköy Alışveriş Merkezi","item":{"@id":"https://funnyday.com.tr/posts/funnyday-cerkezkoy-center-alisveris-merkezi.html"},"@type":"ListItem"}],"@context":"https://schema.org","@type":"BreadcrumbList"},{"url":"https://funnyday.com.tr/images/032026/20260305_ac351643.jpg","contentUrl":"https://funnyday.com.tr/images/032026/20260305_ac351643.jpg","license":null,"acquireLicensePage":null,"@type":"ImageObject"},{"name":"FunnyDay - Çerkezköy Alışveriş Merkezi","image":null,"telephone":"0 282 726 64 42","url":"https://funnyday.com.tr/posts/funnyday-cerkezkoy-center-alisveris-merkezi.html","priceRange":"","address":{"streetAddress":"Gazi Mustafa Kemalpaşa Mah.","addressLocality":"Tekirdağ/Çerkezköy","addressRegion":"","postalCode":"59500","addressCountry":"TR","@type":"PostalAddress"},"geo":null,"@context":"https://schema.org","@type":"EntertainmentBusiness"}]}</script>
+
+    <!-- Google Fonts (loaded via CSS @import — no extra tag needed) -->
     <link rel="stylesheet" href="/assets/css/main.css"/>
-    <link rel="icon" href="https://funnyday.com.tr/images/022026/20260225_5880c863.jpg">
+    <!-- Font Awesome for button icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="icon" href="https://funnyday.com.tr/images/022026/20260225_5880c863.jpg"/>
 </head>
-<body class="is-preload homepage">
+<body class="is-preload">
 <div id="page-wrapper">
+
+    <!-- ═══════════════════════════════════════════════
+         HEADER / NAV
+         ═══════════════════════════════════════════════ -->
     <div id="header-wrapper">
-
-
-        <section id="header">
+        <section id="header" class="container">
 
             <!-- Logo -->
             <h1>
-                <a href="/index.html" style="display: inline-flex; align-items: center; text-decoration: none;">
-                    <img loading="lazy" alt="FunnyDay"
-                         title="FunnyDay" src="https://funnyday.com.tr/images/022026/20260225_5349278b.jpg"
-                         style=" margin-right: 10px;"/>
+                <a href="/index.html" style="display:inline-flex;align-items:center;text-decoration:none;">
+                    <img loading="lazy"
+                         alt="FunnyDay"
+                         title="FunnyDay"
+                         src="https://funnyday.com.tr/images/022026/20260225_5880c863.jpg"
+                         style="height:38px;width:auto;border-radius:6px;object-fit:contain;margin-right:8px;"/>
                     <span>FunnyDay</span>
                 </a>
             </h1>
 
-
-            <!-- Nav -->
+            <!-- Desktop nav -->
             <nav id="nav">
                 <ul>
                     <li>
                         <a href="/">Anasayfa</a>
                     </li>
 
+                    <!-- Dynamic dropdown menus -->
                     
                         <li>
                             <a href="#">Eğlence Merkezlerimiz</a>
@@ -110,6 +119,7 @@
                         </li>
                     
 
+                    <!-- Featured constant pages (top-level links) -->
                     
                         <li>
                             <a href="/fotogaleri.html">Foto Galeri</a>
@@ -118,23 +128,20 @@
                         
                     
 
-                    <li
-                    >
+                    <!-- Categories -->
+                    <li>
                         <a href="/categories/etkinlikler.html">Etkinlikler</a>
                     </li>
-
-                    <li
-                    >
+                    <li>
                         <a href="/categories/franchise.html">Franchise</a>
                     </li>
-
-                    <li
-                    >
+                    <li>
                         <a href="/categories/haberler.html">Haberler</a>
                     </li>
 
+                    <!-- Non-featured pages grouped as dropdown -->
                     
-                        <li class="opener">
+                        <li>
                             <a href="#">Hakkımızda</a>
                             <ul>
                                 <li>
@@ -146,71 +153,138 @@
                             </ul>
                         </li>
                     
-
                 </ul>
             </nav>
+
+            <!-- Mobile toggle -->
+            <button id="navToggle" aria-label="Menüyü aç" aria-expanded="false">
+                <span aria-hidden="true">&#9776;</span>
+            </button>
+
         </section>
     </div>
-    <body class="no-sidebar is-preload">
-		<div id="page-wrapper">
 
-			<!-- Main -->
-				<section id="main">
-					<div class="container">
-						<!-- Content -->
-							<article class="box post">
-								<div href="#" class="image centered">
-									<img src="https://funnyday.com.tr/images/032026/20260305_ac351643.jpg" alt="" />
-								</div>
-								<header>
-									<h2>FunnyDay - Çerkezköy Alışveriş Merkezi</h2>
-<!--									<p>Lorem ipsum dolor sit amet feugiat</p>-->
-								</header>
-								<div><p>GAZİ.M.K.P MAH.KİPA AVM ÇERKEZKÖY/TEKİRDAĞ</p>
+    <!-- Mobile nav overlay -->
+    <div id="navOverlay" role="presentation"></div>
+
+    <!-- Mobile nav panel -->
+    <div id="navPanel" role="navigation" aria-label="Mobil menü">
+        <button class="nav-panel-close" aria-label="Kapat">&#10005;</button>
+        <nav>
+            <a href="/" class="link depth-0">🏠 Anasayfa</a>
+
+            
+                <a href="#" class="link depth-0">Eğlence Merkezlerimiz</a>
+                
+                    
+                
+                    
+                        
+                            <a href="https://funnyday.com.tr/posts/funnyday-citys-alisveris-merkezi.html" class="link depth-1">Smartplay - City&#39;s Alışveriş Merkezi</a>
+                        
+                    
+                
+                    
+                        
+                            <a href="https://funnyday.com.tr/posts/novada-avm-funnyday.html" class="link depth-1">Funnyday - Novada Alışveriş Merkezi</a>
+                        
+                    
+                
+                    
+                        
+                            <a href="https://funnyday.com.tr/posts/funnyday---ninova-alisveris-merkezi.html" class="link depth-1">Smartplay - Ninova Alışveriş Merkezi</a>
+                        
+                    
+                
+                    
+                        
+                            <a href="https://funnyday.com.tr/posts/funnyday-lovelet-avm.html" class="link depth-1">FunnyDay - Lovelet Alışveriş Merkezi</a>
+                        
+                    
+                
+                    
+                        
+                            <a href="https://funnyday.com.tr/posts/funnyday----kesan-migros.html" class="link depth-1">FunnyDay - Kipa Alışveriş Merkezi</a>
+                        
+                    
+                
+                    
+                        
+                            <a href="https://funnyday.com.tr/posts/funnyday-cerkezkoy-center-alisveris-merkezi.html" class="link depth-1">FunnyDay - Çerkezköy Alışveriş Merkezi</a>
+                        
+                    
+                
+            
+
+            
+                <a href="/fotogaleri.html"
+                   class="link depth-0">Foto Galeri</a>
+            
+
+            <a href="/categories/etkinlikler.html"
+               class="link depth-0">Etkinlikler</a><a href="/categories/franchise.html"
+               class="link depth-0">Franchise</a><a href="/categories/haberler.html"
+               class="link depth-0">Haberler</a>
+
+            
+                
+                    <a href="#" class="link depth-0">Hakkımızda</a>
+                    <a href="/iletisim.html"
+                       class="link depth-1">İletişim</a><a href="/hakkimizda.html"
+                       class="link depth-1">Hakkımızda</a>
+                
+            
+        </nav>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════
+         PAGE BODY (injected by child templates)
+         ═══════════════════════════════════════════════ -->
+    <body class="no-sidebar is-preload">
+<div id="page-wrapper">
+    <section id="main">
+        <div class="container">
+            <article class="box post">
+                <div class="image centered">
+                    <img src="https://funnyday.com.tr/images/032026/20260305_ac351643.jpg" alt=""/>
+                </div>
+                <header>
+                    <h2>FunnyDay - Çerkezköy Alışveriş Merkezi</h2>
+                </header>
+                <div><p>GAZİ.M.K.P MAH.KİPA AVM ÇERKEZKÖY/TEKİRDAĞ</p>
 <p>0 282 726 64 42</p>
 </div>
-							</article>
-					</div>
-				</section>
-		</div>
-	</body>
+            </article>
+        </div>
+    </section>
+</div>
+</body>
+
+    <!-- ═══════════════════════════════════════════════
+         FOOTER
+         ═══════════════════════════════════════════════ -->
     <section id="footer">
         <div class="container">
             <div class="row">
-                <div class="col-8 col-12-medium">
-                    <section>
-                        
-                        
-                    </section>
-                </div>
+
+                <!-- Recent posts -->
+                
+
+                <!-- Banner image + site name -->
                 <div class="col-4 col-12-medium">
                     <section>
-                        <header>
-                            <h2>FunnyDay - Çerkezköy Alışveriş Merkezi - FunnyDay</h2>
-                        </header>
-                        <a href="index.html" class="image featured">
+                        <header><h2>FunnyDay</h2></header>
+                        <a href="/index.html"
+                           class="image featured">
                             <img src="https://funnyday.com.tr/images/022026/20260226_3c1ca457.jpg" alt=""/>
                         </a>
-                        <!--                        <p>-->
-                        <!--                            This is <strong>Dopetrope</strong> a free, fully responsive HTML5 site template by-->
-                        <!--                            <a href="http://twitter.com/ajlkn">AJ</a> for <a href="http://html5up.net/">HTML5 UP</a>-->
-                        <!--                            It's released for free under-->
-                        <!--                            the <a href="http://html5up.net/license/">Creative Commons Attribution</a> license so-->
-                        <!--                            feel free to use it for any personal or commercial project &ndash; just don't forget to-->
-                        <!--                            credit us!-->
-                        <!--                        </p>-->
-                        <!--                        <footer>-->
-                        <!--                            <ul class="actions">-->
-                        <!--                                <li><a href="#" class="button">Find out more</a></li>-->
-                        <!--                            </ul>-->
-                        <!--                        </footer>-->
                     </section>
                 </div>
+
+                <!-- Static pages links -->
                 <div class="col-8 col-6-medium col-12-small">
                     <section>
-                        <header>
-                            <h2>Hakkımızda</h2>
-                        </header>
+                        <header><h2>Hakkımızda</h2></header>
                         <ul class="divided">
                             <li>
                                 <a href="/fotogaleri.html">Foto Galeri</a>
@@ -224,64 +298,44 @@
                         </ul>
                     </section>
                 </div>
-                <!--                <div class="col-4 col-6-medium col-12-small">-->
-                <!--                    <section>-->
-                <!--                        <header>-->
-                <!--                            <h2>Ipsum et phasellus</h2>-->
-                <!--                        </header>-->
-                <!--                        <ul class="divided">-->
-                <!--                            <li><a href="#">Lorem ipsum dolor sit amet sit veroeros</a></li>-->
-                <!--                            <li><a href="#">Sed et blandit consequat sed tlorem blandit</a></li>-->
-                <!--                            <li><a href="#">Adipiscing feugiat phasellus sed tempus</a></li>-->
-                <!--                            <li><a href="#">Hendrerit tortor vitae mattis tempor sapien</a></li>-->
-                <!--                            <li><a href="#">Sem feugiat sapien id suscipit magna felis nec</a></li>-->
-                <!--                            <li><a href="#">Elit class aptent taciti sociosqu ad litora</a></li>-->
-                <!--                        </ul>-->
-                <!--                    </section>-->
-                <!--                </div>-->
+
+                <!-- Share + contact -->
                 <div class="col-4 col-12-medium">
                     <section>
-                        <header>
-                            <h2>Paylaş</h2>
-                        </header>
+                        <header><h2>Paylaş</h2></header>
                         <ul class="social">
                             <li>
-                                <a title="Share on Facebook" href="https://www.facebook.com/sharer/sharer.php?u=funnyday.com.tr%2Fposts%2Ffunnyday-cerkezkoy-center-alisveris-merkezi.html" target="_blank">
-                                    <img loading="lazy"
-                                         src="https://codenfast.com/images/012021/share-facebook-64x64.webp"
-                                         class="share-icon" alt="Share on Facebook">
+                                <a title="Share on Facebook" href="https://www.facebook.com/sharer/sharer.php?u=funnyday.com.tr%2Fposts%2Ffunnyday-cerkezkoy-center-alisveris-merkezi.html" target="_blank" rel="noopener">
+                                    <img loading="lazy" src="https://codenfast.com/images/012021/share-facebook-64x64.webp"
+                                         class="share-icon" alt="Facebook"/>
                                 </a>
                             </li>
                             <li>
-                                <a title="Share on Twitter" href="https://www.twitter.com/share?url=funnyday.com.tr%2Fposts%2Ffunnyday-cerkezkoy-center-alisveris-merkezi.html&amp;text=FunnyDay+-+%C3%87erkezk%C3%B6y+Al%C4%B1%C5%9Fveri%C5%9F+Merkezi" target="_blank">
-                                    <img loading="lazy"
-                                         src="https://codenfast.com/images/012021/share-twitter-64x64.webp"
-                                         class="share-icon" alt="Share on Twitter">
+                                <a title="Share on Twitter" href="https://www.twitter.com/share?url=funnyday.com.tr%2Fposts%2Ffunnyday-cerkezkoy-center-alisveris-merkezi.html&amp;text=FunnyDay+-+%C3%87erkezk%C3%B6y+Al%C4%B1%C5%9Fveri%C5%9F+Merkezi" target="_blank" rel="noopener">
+                                    <img loading="lazy" src="https://codenfast.com/images/012021/share-twitter-64x64.webp"
+                                         class="share-icon" alt="Twitter/X"/>
                                 </a>
                             </li>
                             <li>
-                                <a title="Share on WhatsApp" href="whatsapp://send?text=FunnyDay+-+%C3%87erkezk%C3%B6y+Al%C4%B1%C5%9Fveri%C5%9F+Merkezi%20funnyday.com.tr%2Fposts%2Ffunnyday-cerkezkoy-center-alisveris-merkezi.html"
-                                   data-action="share/whatsapp/share">
-                                    <img loading="lazy"
-                                         src="https://codenfast.com/images/012021/share-whatsapp-64x64.webp"
-                                         class="share-icon" alt="Share on WhatsApp">
+                                <a title="Share on WhatsApp" href="whatsapp://send?text=FunnyDay+-+%C3%87erkezk%C3%B6y+Al%C4%B1%C5%9Fveri%C5%9F+Merkezi%20funnyday.com.tr%2Fposts%2Ffunnyday-cerkezkoy-center-alisveris-merkezi.html" target="_blank" rel="noopener">
+                                    <img loading="lazy" src="https://codenfast.com/images/012021/share-whatsapp-64x64.webp"
+                                         class="share-icon" alt="WhatsApp"/>
                                 </a>
                             </li>
                             <li>
-                                <a title="Share on Telegram" href="https://t.me/share/url?url=funnyday.com.tr%2Fposts%2Ffunnyday-cerkezkoy-center-alisveris-merkezi.html&amp;text=FunnyDay+-+%C3%87erkezk%C3%B6y+Al%C4%B1%C5%9Fveri%C5%9F+Merkezi" target="_blank">
-                                    <img loading="lazy"
-                                         src="https://codenfast.com/images/012021/share-telegram-64x64.webp"
-                                         class="share-icon" alt="Share on Telegram">
+                                <a title="Share on Telegram" href="https://t.me/share/url?url=funnyday.com.tr%2Fposts%2Ffunnyday-cerkezkoy-center-alisveris-merkezi.html&amp;text=FunnyDay+-+%C3%87erkezk%C3%B6y+Al%C4%B1%C5%9Fveri%C5%9F+Merkezi" target="_blank" rel="noopener">
+                                    <img loading="lazy" src="https://codenfast.com/images/012021/share-telegram-64x64.webp"
+                                         class="share-icon" alt="Telegram"/>
                                 </a>
                             </li>
                             <li>
-                                <a title="Share on LinkedIn" href="https://www.linkedin.com/sharing/share-offsite/?url=funnyday.com.tr%2Fposts%2Ffunnyday-cerkezkoy-center-alisveris-merkezi.html" target="_blank">
-                                    <img loading="lazy"
-                                         src="https://codenfast.com/images/012021/share-linkedin-64x64.webp"
-                                         class="share-icon" alt="Share on LinkedIn">
+                                <a title="Share on LinkedIn" href="https://www.linkedin.com/sharing/share-offsite/?url=funnyday.com.tr%2Fposts%2Ffunnyday-cerkezkoy-center-alisveris-merkezi.html" target="_blank" rel="noopener">
+                                    <img loading="lazy" src="https://codenfast.com/images/012021/share-linkedin-64x64.webp"
+                                         class="share-icon" alt="LinkedIn"/>
                                 </a>
                             </li>
                         </ul>
+
                         <ul class="contact">
                             <li>
                                 <h3>İletişim</h3>
@@ -292,26 +346,24 @@
                         </ul>
                     </section>
                 </div>
+
+                <!-- Copyright -->
                 <div class="col-12">
-                    <!-- Copyright -->
                     <div id="copyright">
                         <ul class="links">
                             <li>FunnyDay 2026, Tüm Hakları Saklıdır</li>
-                            <li>Design:
-                                <a href="http://html5up.net">HTML5 UP</a>
-                            </li>
+                            <li>Design: <a href="http://html5up.net" target="_blank" rel="noopener">HTML5 UP</a></li>
                         </ul>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
-</div>
-<script src="/assets/js/jquery.min.js"></script>
-<script src="/assets/js/jquery.dropotron.min.js"></script>
-<script src="/assets/js/browser.min.js"></script>
-<script src="/assets/js/breakpoints.min.js"></script>
-<script src="/assets/js/util.js"></script>
+
+</div><!-- /page-wrapper -->
+
+<!-- Only our lean main.js — jQuery removed -->
 <script src="/assets/js/main.js"></script>
 </body>
 </html>
