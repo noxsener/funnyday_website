@@ -313,19 +313,22 @@
                         transition: background 0.2s; z-index: 10001;
                     ">&#8592;</button>
                     <img id="lb-img" src="" alt="" style="
-                        display: block;
-                        position: relative;
-                        z-index: 10000;
-                        max-width: 90vw;
-                        max-height: 88vh;
-                        width: auto;
-                        height: auto;
-                        object-fit: contain;
-                        border-radius: 8px;
-                        box-shadow: 0 8px 60px rgba(0,0,0,0.6);
-                        cursor: default;
-                        user-select: none;
-                        pointer-events: auto;
+                        display: block !important;
+                        position: relative !important;
+                        z-index: 10000 !important;
+                        max-width: 90vw !important;
+                        max-height: 88vh !important;
+                        width: auto !important;
+                        height: auto !important;
+                        min-width: 100px !important;
+                        min-height: 100px !important;
+                        object-fit: contain !important;
+                        border-radius: 8px !important;
+                        box-shadow: 0 8px 60px rgba(0,0,0,0.6) !important;
+                        cursor: default !important;
+                        opacity: 1 !important;
+                        visibility: visible !important;
+                        pointer-events: auto !important;
                     "/>
                     <button id="lb-next" aria-label="Sonraki" style="
                         position: absolute; right: 1.5rem; top: 50%; transform: translateY(-50%);
@@ -339,6 +342,7 @@
                         background: rgba(255,255,255,0.15); border: none; color: #fff;
                         font-size: 1.5rem; width: 40px; height: 40px; border-radius: 50%;
                         cursor: pointer; display: flex; align-items: center; justify-content: center;
+                        z-index: 10001;
                     ">&#10005;</button>
                     <div id="lb-counter" style="
                         position: absolute; bottom: 1.2rem; left: 50%; transform: translateX(-50%);
