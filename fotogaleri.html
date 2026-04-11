@@ -415,8 +415,12 @@
             item.addEventListener('click', function() { openLightbox(idx); });
         });
 
+        /* ── Lightbox'ı body'e taşı (fixed position sorununu çözer) ── */
+        var lb = document.getElementById('lightbox');
+        document.body.appendChild(lb);
+
         /* ── Lightbox ── */
-        var lb        = document.getElementById('lightbox');
+        lb        = document.getElementById('lightbox');
         var lbImg     = document.getElementById('lb-img');
         var lbCounter = document.getElementById('lb-counter');
         var lbClose   = document.getElementById('lb-close');
