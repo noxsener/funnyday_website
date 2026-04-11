@@ -24,23 +24,34 @@
     <meta name="twitter:site" content="@"/>
     <script type="application/ld+json">{"mainEntity":{"name":"FunnyDay","url":"https://funnyday.com.tr/","image":null,"logo":"https://funnyday.com.tr/images/022026/20260225_5349278b.jpg","sameAs":["https://funnyday.com.tr/"],"@type":"Organization"},"@context":"https://schema.org","@type":"ProfilePage"}</script>
 
-    <!-- Google Fonts (loaded via CSS @import — no extra tag needed) -->
     <link rel="stylesheet" href="/assets/css/main.css"/>
-    <!-- Font Awesome for button icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
           crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <link rel="icon" href="https://funnyday.com.tr/images/022026/20260225_5880c863.jpg"/>
+
+    <style>
+        /* ── Dropdown boşluk düzeltmesi ──────────────────────────────
+           top: 100% ile boşluğu sıfırla, ::before ile görünmez köprü */
+        nav#nav li ul {
+            top: 100% !important;
+            padding-top: 4px;
+        }
+        nav#nav li ul::before {
+            content: '';
+            position: absolute;
+            top: -8px;
+            left: 0;
+            right: 0;
+            height: 8px;
+        }
+    </style>
 </head>
 <body class="is-preload">
 <div id="page-wrapper">
 
-    <!-- ═══════════════════════════════════════════════
-         HEADER / NAV
-         ═══════════════════════════════════════════════ -->
     <div id="header-wrapper">
         <section id="header" class="container">
 
-            <!-- Logo -->
             <h1>
                 <a href="/index.html" style="display:inline-flex; align-items:center; text-decoration:none;">
                     <img loading="lazy"
@@ -51,14 +62,12 @@
                 </a>
             </h1>
 
-            <!-- Desktop nav -->
             <nav id="nav">
                 <ul>
                     <li class="current">
                         <a href="/">Biz Kimiz?</a>
                     </li>
 
-                    <!-- Dynamic dropdown menus -->
                     
                         <li>
                             <a href="#">Eğlence Merkezlerimiz</a>
@@ -118,7 +127,6 @@
                         </li>
                     
 
-                    <!-- Featured constant pages (top-level links) -->
                     
                         <li>
                             <a href="/fotogaleri.html">Foto Galeri</a>
@@ -127,18 +135,18 @@
                         
                     
 
-                    <!-- Categories -->
                     <li>
                         <a href="/categories/etkinlikler.html">Etkinlikler</a>
                     </li>
+
                     <li>
                         <a href="/categories/franchise.html">Franchise</a>
                     </li>
+
                     <li>
                         <a href="/categories/haberler.html">Haberler</a>
                     </li>
 
-                    <!-- Non-featured pages grouped as dropdown -->
                     
                         <li>
                             <a href="#">İletişim</a>
@@ -155,7 +163,6 @@
                 </ul>
             </nav>
 
-            <!-- Mobile toggle -->
             <button id="navToggle" aria-label="Menüyü aç" aria-expanded="false">
                 <span aria-hidden="true">&#9776;</span>
             </button>
@@ -163,10 +170,8 @@
         </section>
     </div>
 
-    <!-- Mobile nav overlay -->
     <div id="navOverlay" role="presentation"></div>
 
-    <!-- Mobile nav panel -->
     <div id="navPanel" role="navigation" aria-label="Mobil menü">
         <button class="nav-panel-close" aria-label="Kapat">&#10005;</button>
         <nav>
@@ -236,24 +241,48 @@
         </nav>
     </div>
 
-    <!-- ═══════════════════════════════════════════════
-         PAGE BODY (injected by child templates)
-         ═══════════════════════════════════════════════ -->
     <body class="homepage is-preload">
 <div id="page-wrapper">
 
     <!-- ═══════════════════════════════════════════════
-         BANNER
+         BANNER — Slider
          ═══════════════════════════════════════════════ -->
     <section id="banner">
-        <header>
-            <h2>FunnyDay</h2>
-            <p></p>
-        </header>
+
+        <div class="banner-slider">
+            <div class="slide  active"
+                 style="background-image: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.55)), url(https://funnyday.com.tr/images/022026/20260226_3c1ca457.jpg);">
+                <div class="container">
+                    <div class="slider-content">
+                        <!-- Logo ortada -->
+                        <div class="slider-logo">
+                            <img src="https://funnyday.com.tr/images/022026/20260225_5349278b.jpg"
+                                 alt="FunnyDay"
+                                 style="height:90px; width:auto; object-fit:contain; filter:drop-shadow(0 2px 12px rgba(0,0,0,0.4));"/>
+                        </div>
+                        <div class="slider-desc"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slider ok butonları (birden fazla slide varsa) -->
+        <button class="slider-btn slider-prev" aria-label="Önceki slide">&#8592;</button>
+        <button class="slider-btn slider-next" aria-label="Sonraki slide">&#8594;</button>
+
+        <!-- Nokta indikatörleri -->
+        <div class="slider-dots">
+            <span class="slider-dot  active"
+                  data-index="0"></span>
+        </div>
+
     </section>
 
+    <!-- Banner yoksa sade başlık göster -->
+    
+
     <!-- ═══════════════════════════════════════════════
-         INTRO — Hakkımızda / Özellikler / Referanslar
+         INTRO
          ═══════════════════════════════════════════════ -->
     <section id="intro" class="container">
 
@@ -612,19 +641,179 @@
     </section>
 
 </div>
+
+<style>
+    /* ── Banner / Slider ───────────────────────────────────── */
+    #banner {
+        position: relative;
+        overflow: hidden;
+        height: 70vh;
+        min-height: 420px;
+        padding: 0;
+        border-bottom: none;
+    }
+
+    .banner-slider {
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+
+    .slide {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        opacity: 0;
+        transition: opacity 0.8s ease;
+        pointer-events: none;
+    }
+
+    .slide.active {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .slider-content {
+        text-align: center;
+        padding: 2rem;
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    .slider-logo {
+        margin-bottom: 1.2rem;
+        animation: fd-float 3s ease-in-out infinite;
+    }
+
+    .slider-desc {
+        color: rgba(255,255,255,0.92) !important;
+        font-size: 1.05rem;
+        line-height: 1.7;
+        text-shadow: 0 1px 6px rgba(0,0,0,0.5);
+    }
+
+    .slider-desc p { color: rgba(255,255,255,0.92) !important; margin-bottom: 0; }
+
+    /* Ok butonları */
+    .slider-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(255,255,255,0.18);
+        border: none;
+        color: #fff;
+        font-size: 1.6rem;
+        width: 46px;
+        height: 46px;
+        border-radius: 50%;
+        cursor: pointer;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background 0.2s ease;
+        backdrop-filter: blur(4px);
+    }
+    .slider-btn:hover { background: rgba(255,255,255,0.35); }
+    .slider-prev { left: 1.2rem; }
+    .slider-next { right: 1.2rem; }
+
+    /* Tek slide varsa ok butonlarını gizle */
+    .banner-slider:only-child ~ .slider-btn { display: none; }
+
+    /* Nokta indikatörleri */
+    .slider-dots {
+        position: absolute;
+        bottom: 1rem;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 0.5rem;
+        z-index: 10;
+    }
+
+    .slider-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: rgba(255,255,255,0.45);
+        cursor: pointer;
+        transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    .slider-dot.active {
+        background: #fff;
+        transform: scale(1.3);
+    }
+
+    @media (max-width: 767px) {
+        #banner { height: 55vh; min-height: 320px; }
+        .slider-logo img { height: 60px !important; }
+        .slider-btn { width: 36px; height: 36px; font-size: 1.2rem; }
+    }
+</style>
+
+<script>
+    (function () {
+        var slides = document.querySelectorAll('.slide');
+        var dots   = document.querySelectorAll('.slider-dot');
+        var prev   = document.querySelector('.slider-prev');
+        var next   = document.querySelector('.slider-next');
+
+        if (!slides.length) return;
+
+        /* Tek slide varsa ok ve nokta gizle */
+        if (slides.length === 1) {
+            if (prev) prev.style.display = 'none';
+            if (next) next.style.display = 'none';
+            document.querySelector('.slider-dots') && (document.querySelector('.slider-dots').style.display = 'none');
+            return;
+        }
+
+        var current  = 0;
+        var interval = null;
+
+        function goTo(idx) {
+            slides[current].classList.remove('active');
+            if (dots[current]) dots[current].classList.remove('active');
+            current = (idx + slides.length) % slides.length;
+            slides[current].classList.add('active');
+            if (dots[current]) dots[current].classList.add('active');
+        }
+
+        function startAuto() {
+            interval = setInterval(function () { goTo(current + 1); }, 5000);
+        }
+
+        function resetAuto() {
+            clearInterval(interval);
+            startAuto();
+        }
+
+        if (prev) prev.addEventListener('click', function () { goTo(current - 1); resetAuto(); });
+        if (next) next.addEventListener('click', function () { goTo(current + 1); resetAuto(); });
+
+        dots.forEach(function (dot, i) {
+            dot.addEventListener('click', function () { goTo(i); resetAuto(); });
+        });
+
+        startAuto();
+    })();
+</script>
+
 </body>
 
-    <!-- ═══════════════════════════════════════════════
-         FOOTER
-         ═══════════════════════════════════════════════ -->
     <section id="footer">
         <div class="container">
             <div class="row">
 
-                <!-- Recent posts -->
                 
 
-                <!-- Banner image + site name -->
                 <div class="col-8 col-12-medium">
                     <section>
                         <header>
@@ -641,10 +830,9 @@
                     </section>
                 </div>
 
-                <!-- Static pages links -->
                 <div class="col-8 col-6-medium col-12-small">
                     <section>
-                        <header><h2>Hakkımızda</h2></header>
+                        <header><h2>İletişim</h2></header>
                         <ul class="divided">
                             <li>
                                 <a href="/fotogaleri.html">Foto Galeri</a>
@@ -659,7 +847,6 @@
                     </section>
                 </div>
 
-                <!-- Şu anda bu istenmiyor. Share + contact -->
                 
 
                 <div class="col-4 col-12-medium">
@@ -676,7 +863,6 @@
                     </section>
                 </div>
 
-                <!-- Copyright -->
                 <div class="col-12">
                     <div id="copyright">
                         <ul class="links">
@@ -689,9 +875,8 @@
         </div>
     </section>
 
-</div><!-- /page-wrapper -->
+</div>
 
-<!-- Only our lean main.js — jQuery removed -->
 <script src="/assets/js/main.js"></script>
 </body>
 </html>

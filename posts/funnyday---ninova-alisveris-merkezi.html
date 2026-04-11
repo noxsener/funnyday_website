@@ -24,23 +24,34 @@
     <meta name="twitter:site" content="@"/>
     <script type="application/ld+json">{"@graph":[{"itemListElement":[{"position":1,"name":"Home","item":{"@id":"https://funnyday.com.tr/"},"@type":"ListItem"},{"position":2,"name":"Haberler","item":{"@id":"https://funnyday.com.tr/categories/haberler.html"},"@type":"ListItem"},{"position":3,"name":"Smartplay - Ninova Alışveriş Merkezi","item":{"@id":"https://funnyday.com.tr/posts/funnyday---ninova-alisveris-merkezi.html"},"@type":"ListItem"}],"@context":"https://schema.org","@type":"BreadcrumbList"},{"url":"https://funnyday.com.tr/images/032026/20260305_ac351643.jpg","contentUrl":"https://funnyday.com.tr/images/032026/20260305_ac351643.jpg","license":null,"acquireLicensePage":null,"@type":"ImageObject"},{"name":"FunnyDay - Ninova Alışveriş Merkezi","image":null,"telephone":"0412 503 46 48","url":"https://funnyday.com.tr/posts/funnyday---ninova-alisveris-merkezi.html","priceRange":"","address":{"streetAddress":"Selahattin Eyyubi Mah. ŞanlıUrfa Bulvarı, Apt No: 13/223 (K2-023)","addressLocality":"Diyarbakır/Bağlar","addressRegion":"","postalCode":"21100","addressCountry":"TR","@type":"PostalAddress"},"geo":null,"@context":"https://schema.org","@type":"EntertainmentBusiness"}]}</script>
 
-    <!-- Google Fonts (loaded via CSS @import — no extra tag needed) -->
     <link rel="stylesheet" href="/assets/css/main.css"/>
-    <!-- Font Awesome for button icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
           crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <link rel="icon" href="https://funnyday.com.tr/images/022026/20260225_5880c863.jpg"/>
+
+    <style>
+        /* ── Dropdown boşluk düzeltmesi ──────────────────────────────
+           top: 100% ile boşluğu sıfırla, ::before ile görünmez köprü */
+        nav#nav li ul {
+            top: 100% !important;
+            padding-top: 4px;
+        }
+        nav#nav li ul::before {
+            content: '';
+            position: absolute;
+            top: -8px;
+            left: 0;
+            right: 0;
+            height: 8px;
+        }
+    </style>
 </head>
 <body class="is-preload">
 <div id="page-wrapper">
 
-    <!-- ═══════════════════════════════════════════════
-         HEADER / NAV
-         ═══════════════════════════════════════════════ -->
     <div id="header-wrapper">
         <section id="header" class="container">
 
-            <!-- Logo -->
             <h1>
                 <a href="/index.html" style="display:inline-flex; align-items:center; text-decoration:none;">
                     <img loading="lazy"
@@ -51,14 +62,12 @@
                 </a>
             </h1>
 
-            <!-- Desktop nav -->
             <nav id="nav">
                 <ul>
                     <li>
                         <a href="/">Biz Kimiz?</a>
                     </li>
 
-                    <!-- Dynamic dropdown menus -->
                     
                         <li>
                             <a href="#">Eğlence Merkezlerimiz</a>
@@ -118,7 +127,6 @@
                         </li>
                     
 
-                    <!-- Featured constant pages (top-level links) -->
                     
                         <li>
                             <a href="/fotogaleri.html">Foto Galeri</a>
@@ -127,18 +135,18 @@
                         
                     
 
-                    <!-- Categories -->
                     <li>
                         <a href="/categories/etkinlikler.html">Etkinlikler</a>
                     </li>
+
                     <li>
                         <a href="/categories/franchise.html">Franchise</a>
                     </li>
+
                     <li>
                         <a href="/categories/haberler.html">Haberler</a>
                     </li>
 
-                    <!-- Non-featured pages grouped as dropdown -->
                     
                         <li>
                             <a href="#">İletişim</a>
@@ -155,7 +163,6 @@
                 </ul>
             </nav>
 
-            <!-- Mobile toggle -->
             <button id="navToggle" aria-label="Menüyü aç" aria-expanded="false">
                 <span aria-hidden="true">&#9776;</span>
             </button>
@@ -163,10 +170,8 @@
         </section>
     </div>
 
-    <!-- Mobile nav overlay -->
     <div id="navOverlay" role="presentation"></div>
 
-    <!-- Mobile nav panel -->
     <div id="navPanel" role="navigation" aria-label="Mobil menü">
         <button class="nav-panel-close" aria-label="Kapat">&#10005;</button>
         <nav>
@@ -236,9 +241,6 @@
         </nav>
     </div>
 
-    <!-- ═══════════════════════════════════════════════
-         PAGE BODY (injected by child templates)
-         ═══════════════════════════════════════════════ -->
     <body class="no-sidebar is-preload">
 <div id="page-wrapper">
     <section id="main">
@@ -266,17 +268,12 @@
 </div>
 </body>
 
-    <!-- ═══════════════════════════════════════════════
-         FOOTER
-         ═══════════════════════════════════════════════ -->
     <section id="footer">
         <div class="container">
             <div class="row">
 
-                <!-- Recent posts -->
                 
 
-                <!-- Banner image + site name -->
                 <div class="col-8 col-12-medium">
                     <section>
                         <header>
@@ -293,10 +290,9 @@
                     </section>
                 </div>
 
-                <!-- Static pages links -->
                 <div class="col-8 col-6-medium col-12-small">
                     <section>
-                        <header><h2>Hakkımızda</h2></header>
+                        <header><h2>İletişim</h2></header>
                         <ul class="divided">
                             <li>
                                 <a href="/fotogaleri.html">Foto Galeri</a>
@@ -311,7 +307,6 @@
                     </section>
                 </div>
 
-                <!-- Şu anda bu istenmiyor. Share + contact -->
                 
 
                 <div class="col-4 col-12-medium">
@@ -328,7 +323,6 @@
                     </section>
                 </div>
 
-                <!-- Copyright -->
                 <div class="col-12">
                     <div id="copyright">
                         <ul class="links">
@@ -341,9 +335,8 @@
         </div>
     </section>
 
-</div><!-- /page-wrapper -->
+</div>
 
-<!-- Only our lean main.js — jQuery removed -->
 <script src="/assets/js/main.js"></script>
 </body>
 </html>
