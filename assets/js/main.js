@@ -11,6 +11,15 @@
         setTimeout(function () {
             document.body.classList.remove('is-preload');
         }, 80);
+        let slides = document.querySelectorAll('.banner-slider .slide');
+        if(slides.length > 1) {
+            let currentSlide = 0;
+            setInterval(() => {
+                slides[currentSlide].classList.remove('active');
+                currentSlide = (currentSlide + 1) % slides.length;
+                slides[currentSlide].classList.add('active');
+            }, 5000);
+        }
     });
 
     /* ── Mobile nav ──────────────────────────────────────────── */
@@ -87,14 +96,3 @@
 })();
 
 
-document.addEventListener('DOMContentLoaded', function() {
-    let slides = document.querySelectorAll('.banner-slider .slide');
-    if(slides.length > 1) {
-        let currentSlide = 0;
-        setInterval(() => {
-            slides[currentSlide].classList.remove('active');
-            currentSlide = (currentSlide + 1) % slides.length;
-            slides[currentSlide].classList.add('active');
-        }, 5000);
-    }
-});
