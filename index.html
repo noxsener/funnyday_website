@@ -237,10 +237,11 @@
     <section id="banner">
 
         <div class="banner-slider">
-            <div class="slide  active"
-                 style="background-image: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.55)), url(https://funnyday.com.tr/images/052026/20260502_9692f440.jpg);">
+<!--            <div th:each="banner, iter : ${bannerParams}" class="slide" th:classappend="${iter.first} ? ' active' : ''" th:style="'background-image: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.55)), url(' + ${banner.featuredImageUrl} + ');'">-->
+            <div class="slide  active" style="background-image: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.55)), url(https://funnyday.com.tr/images/052026/20260502_9692f440.jpg);">
                 <div class="container">
-                    <div class="slider-content">
+<!--                    <div class="slider-content" style="display: none">-->
+                    <div class="slider-content" style="display: none">
                         <!-- Logo ortada -->
                         <div class="slider-logo">
                             <img src="https://funnyday.com.tr/images/022026/20260225_5349278b.jpg"
