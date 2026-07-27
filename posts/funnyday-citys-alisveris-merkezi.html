@@ -28,23 +28,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
           crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <link rel="icon" href="https://funnyday.com.tr/images/202602/20260225_5880c863.jpg"/>
-
-    <style>
-        /* ── Dropdown boşluk düzeltmesi ──────────────────────────────
-           top: 100% ile boşluğu sıfırla, ::before ile görünmez köprü */
-        nav#nav li ul {
-            top: 100% !important;
-            padding-top: 4px;
-        }
-        nav#nav li ul::before {
-            content: '';
-            position: absolute;
-            top: -8px;
-            left: 0;
-            right: 0;
-            height: 8px;
-        }
-    </style>
 </head>
 <body class="is-preload">
 <div id="page-wrapper">
@@ -53,11 +36,10 @@
         <section id="header" class="container">
 
             <h1>
-                <a href="/index.html" style="display:inline-flex; align-items:center; text-decoration:none;">
+                <a href="/index.html">
                     <img loading="lazy"
                          src="https://funnyday.com.tr/images/202602/20260225_5349278b.jpg"
-                         alt="FunnyDay"
-                         style="height:60px; width:auto; object-fit:contain; margin-right:12px; transition: transform 0.3s ease;"/>
+                         alt="FunnyDay"/>
                     
                 </a>
             </h1>
@@ -67,6 +49,8 @@
                     <li>
                         <a href="/">Biz Kimiz?</a>
                     </li>
+
+                    
 
                     
                         <li>
@@ -168,6 +152,8 @@
             <a href="/" class="link depth-0">Biz Kimiz?</a>
 
             
+
+            
                 <a href="#" class="link depth-0">Eğlence Merkezlerimiz</a>
                 
                     
@@ -235,11 +221,10 @@
             <article class="box post">
 
                 <!-- Küçük logo -->
-                <div style="text-align:center; margin-bottom: 1.5rem; padding-top: 1rem;">
+                <div class="post-logo">
                     <a href="/">
                         <img src="https://funnyday.com.tr/images/202602/20260225_5349278b.jpg"
-                             alt="FunnyDay"
-                             style="height:60px; width:auto; object-fit:contain;"/>
+                             alt="FunnyDay"/>
                     </a>
                 </div>
 
@@ -264,10 +249,10 @@
                 <div class="col-8 col-12-medium">
                     <section>
                         <header>
-                            <img src="https://funnyday.com.tr/images/202602/20260225_5349278b.jpg" alt="Logo" style="height:50px; margin-bottom:15px;"/>
+                            <img src="https://funnyday.com.tr/images/202602/20260225_5349278b.jpg" alt="Logo" class="footer-logo"/>
                             <header><h2>İletişim</h2></header>
                         </header>
-                        <ul class="contact" style="margin-top: 20px;">
+                        <ul class="contact">
                             <li>
                                 <div><p>ÇOBANÇEŞME MAH. SANAYİ CAD. NO: 44  D-BLOK D/40 NİSH BAHÇELİEVLER,İSTANBUL/TURKIYE</p>
 <p>Tel : +90 212 302 42 52</p>
@@ -301,7 +286,7 @@
                         <ul class="social">
                             <li>
                                 <a title="Instagram" href="" target="_blank" rel="noopener">
-                                    <i class="fab fa-instagram" style="font-size: 2rem;"></i>
+                                    <i class="fab fa-instagram"></i>
                                     <span class="label">Instagram</span>
                                 </a>
                             </li>
